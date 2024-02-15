@@ -1,0 +1,17 @@
+# docker-compose.yml
+
+version: "3.9"
+
+services:
+  bot:
+      container_name: bot
+      build:
+        context: .
+        dockerfile: Dockerfile
+      restart: on-failure
+      env_file:
+        - .env
+
+networks:
+  default:
+      name: lan
